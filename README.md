@@ -8,7 +8,7 @@
   <li>SetColor commands lets you concatenate loads, like this: RGBSsFfRGBSsFfRGBSsFf (3 colors in one load, each with its starting poing and ending point)</li>
   <li>An array of different colors can be sent with the MQTT command: <strong>rawSetcolor</strong> This command lets you send a load that consists of 2 bytes setting the starting point (As shown before in SetColor) then setting the final point, and then sending 3 bytes of color, per pixel. </li>
   <li>Diferent animations are per default supported. Yet, there are still more to come. Sending the MQTT command <strong>animacion</strong> and as load the number of animation, triggers the said animation.</li>
-  <li>The MQTT command <strong>Fuente</strong>, sets the GPIO pin 16 (D0, in Wemos R1 mini), high or low. <strong>This is the only command that is trigered by the ASCII byte code for "1". The only reason for this is back-compability</li>
+  <li>The MQTT command <strong>Fuente</strong>, sets the GPIO pin 16 (D0, in Wemos R1 mini), high or low. This is the only command that is trigered by the ASCII byte code for "1". The only reason for this is back-compability</li>
   <li>MQTT commands can be mixed together to form new animations, like rawSetColor with animation 255 (moves all the pixels in the right direction)</li>
   <li>OTA capabilities are included, but they are still being tested and debuged. A precompiled file can be uploaded to an existing server, and the esp8266 can upgrade itself. </li>
 </ul> 
