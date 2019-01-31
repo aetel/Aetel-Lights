@@ -10,10 +10,10 @@
 #include <ESP8266httpUpdate.h>
 const uint16_t PixelCount = 633;  //Creo que eran 633 leds. Habria que mirarlo igual s
 #define Fuente D0                 //Este pin va conectado al transistor que enciende la fuente siempre. Activado enciende la fuente
-const char* UserMqtt="lukas"; //casa lukas "puerta"
-const char* PassMqtt="lukas"; //"ae7e1h0st"
-#define IpMqtt "192.168.1.41"//"10.0.60.16"
-const char* OTAServer="http://10.0.60.16/OTAServer/"; //Servidor desde donde se realizan las actualizaciones OTA
+const char* UserMqtt="lukas"; //casa lukas 
+const char* PassMqtt="lukas"; //
+#define IpMqtt "192.168.1.41"//
+const char* OTAServer="http://DIRECCION_IP/OTAServer/"; //Servidor desde donde se realizan las actualizaciones OTA
 //#define ssid "Zona Alfa"
 //#define ssidpass "no te voy a decir la clave"
 WiFiClient    Luces;
@@ -91,8 +91,8 @@ void setup() {
     else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
     else if (error == OTA_END_ERROR) Serial.println("End Failed");
   });
-  ArduinoOTA.setHostname("Luces Aetel");              //Para poder conectarnos por mqtt, y actualizar las luces
-  ArduinoOTA.setPassword((const char *)"IEEEAETEL");
+  ArduinoOTA.setHostname(":)");              //Para poder conectarnos por mqtt, y actualizar las luces
+  ArduinoOTA.setPassword((const char *)"AHHH, quien sabe :)");
   ArduinoOTA.begin();
   client.setServer(IpMqtt, 1883);   //se abre el portal MQTT
   client.setCallback(Recepcion);
@@ -168,7 +168,7 @@ void ServerManager(){ //Se ocupa de mantener la conexion con el servidor y de cu
     delay(100);
     if(client.connect("LucesAetel",UserMqtt,PassMqtt)){  //boolean connect (clientID, username, password, willTopic, willQoS, willRetain, willMessage) //Claves: puerta, ae7elh0st
       client.publish("Luces","a su servicio");
-      client.subscribe("Actualizacion254"); //El primero y mas importante. El que permitira actualizar el sistema
+      client.subscribe("Actualizacionahhh?"); //El primero y mas importante. El que permitira actualizar el sistema
       client.subscribe("actualizacion");
       client.subscribe("SetColor");
       client.subscribe("Fuente");
@@ -201,7 +201,7 @@ void Recepcion(char* tema,byte* carga, unsigned int length){    //MQTT
 //   colocar(rosa,0,633); 
 //   LED.Show();
   }
-  if (strcmp(tema, "Actualizacion254") == 0){ //renovar firmware  //Viejo255
+  if (strcmp(tema, "ActualizacionAHHHHH") == 0){ //renovar firmware  //Viejo255
     //el byte definiria el dispositivo que queremos actualizar?
     //carga[0]
     OverTheAir();
