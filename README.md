@@ -17,6 +17,7 @@
   <li>More animations</li>
   <li>At some point, Music analisis will be added, so it can follow the rythm of the music</li>
   <li>Some Methods might be remade again, to use less global variables. Also there are some bugs with the circular buffer</li>
+  <li>Someday, I hope I take this proyect apart and clean the code a bit. Like, making an unique Struct for all animations, hold keys and other data in the EEPROM, making it object based arquitecture (Diferent LED Strips can be controlled in the same network.</li>
 </ul> 
 <h2> Avaliable Commands</h2>
 <table>
